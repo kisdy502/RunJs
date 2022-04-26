@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap card</title>
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h2>卡片头部和底部</h2>
+        <div class="card">
+            <div class="card-header">头部</div>
+            <div class="card-body">内容</div>
+            <div class="card-footer">底部</div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-3">
+        <h2>多种颜色卡片</h2>
+        <div class="card">
+            <div class="card-body">基础卡片</div>
+        </div>
+        <br>
+        <div class="card bg-primary text-white">
+            <div class="card-body">主要卡片</div>
+        </div>
+        <br>
+        <div class="card bg-success text-white">
+            <div class="card-body">成功卡片</div>
+        </div>
+        <br>
+        <div class="card bg-info text-white">
+            <div class="card-body">信息卡片</div>
+        </div>
+        <br>
+        <div class="card bg-warning text-white">
+            <div class="card-body">警告卡片</div>
+        </div>
+        <br>
+        <div class="card bg-danger text-white">
+            <div class="card-body">危险卡片</div>
+        </div>
+        <br>
+        <div class="card bg-secondary text-white">
+            <div class="card-body">次要卡片</div>
+        </div>
+        <br>
+        <div class="card bg-dark text-white">
+            <div class="card-body">黑色卡片</div>
+        </div>
+        <br>
+        <div class="card bg-light text-dark">
+            <div class="card-body">浅色卡片</div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-3">
+        <h2>标题、文本和链接</h2>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">Some example text. Some example text.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <h2>图片卡片</h2>
+        <p>图片在头部 (card-img-top):</p>
+        <div class="card" style="width:400px">
+            <img class="card-img-top" src="http://static.runoob.com/images/mix/img_avatar.png" alt="Card image"
+                style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+        <br>
+
+        <p>图片在底部(card-img-bottom):</p>
+        <div class="card" style="width:400px">
+            <div class="card-body">
+                <h4 class="card-title">Jane Doe</h4>
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+            <img class="card-img-bottom" src="http://static.runoob.com/images/mix/img_avatar.png" alt="Card image"
+                style="width:100%">
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>文字覆盖图片</h2>
+        <p >如果图片要设置为背景，可以使用 .card-img-overlay 类:</p>
+        <div class="card img-fluid" style="width:500px">
+            <img class="card-img-top" src="http://static.runoob.com/images/mix/img_avatar.png" alt="Card image"
+                style="width:100%">
+            <div class="card-img-overlay">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text text-white">Some example text some example text. Some example text some example text. Some
+                    example text some example text. Some example text some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap button</title>
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+   
+
+
+
+    <div class="container mt-3">
+        <h2>加载按钮</h2>
+        <p>按钮添加正在加载按钮:</p>
+
+        <button class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm"></span>
+        </button>
+
+        <button class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading..
+        </button>
+
+        <button class="btn btn-primary" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading..
+        </button>
+
+        <button class="btn btn-primary" disabled>
+            <span class="spinner-grow spinner-grow-sm"></span>
+            Loading..
+        </button>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>按钮状态</h2>
+        <button type="button" class="btn btn-primary">主要按钮</button>
+        <button type="button" class="btn btn-primary active">点击后的按钮</button>
+        <button type="button" class="btn btn-primary" disabled>禁止点击的按钮</button>
+        <a href="#" class="btn btn-primary disabled">禁止点击的链接</a>
+    </div>
+
+
+    <div class="container mt-3">
+        <p>通过添加 .btn-block 类可以设置块级按钮，.d-grid 类设置在父级元素中：</p>
+        <div class="d-grid gap-3">
+            <button type="button" class="btn btn-primary btn-block">100% 宽度的按钮</button>
+            <button type="button" class="btn btn-primary btn-block">100% 宽度的按钮</button>
+            <button type="button" class="btn btn-primary btn-block">100% 宽度的按钮</button>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>按钮设置边框</h2>
+        <button type="button" class="btn btn-outline-primary">主要按钮</button>
+        <button type="button" class="btn btn-outline-secondary">次要按钮</button>
+        <button type="button" class="btn btn-outline-success">成功</button>
+        <button type="button" class="btn btn-outline-info">信息</button>
+        <button type="button" class="btn btn-outline-warning">警告</button>
+        <button type="button" class="btn btn-outline-danger">危险</button>
+        <button type="button" class="btn btn-outline-dark">黑色</button>
+        <button type="button" class="btn btn-outline-light text-dark">浅色</button>
+    </div>
+
+    <div class="container mt-3">
+        <h2>按钮元素</h2>
+        <a href="#" class="btn btn-info" role="button">链接按钮</a>
+        <button type="button" class="btn btn-info">按钮</button>
+        <input type="button" class="btn btn-info" value="输入框按钮">
+        <input type="submit" class="btn btn-info" value="提交按钮">
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>按钮样式</h2>
+        <button type="button" class="btn">基本按钮</button>
+        <button type="button" class="btn btn-primary">主要按钮</button>
+        <button type="button" class="btn btn-secondary">次要按钮</button>
+        <button type="button" class="btn btn-success">成功</button>
+        <button type="button" class="btn btn-info">信息</button>
+        <button type="button" class="btn btn-warning">警告</button>
+        <button type="button" class="btn btn-danger">危险</button>
+        <button type="button" class="btn btn-dark">黑色</button>
+        <button type="button" class="btn btn-light">浅色</button>
+        <button type="button" class="btn btn-link">链接</button>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>按钮组</h2>
+        <p> .btn-group 类用于创建按钮组:</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>按钮组大小</h2>
+        <p>我们可以使用 .btn-group-lg|sm|xs 类来设置按钮组的大小。</p>
+        <h3>大按钮:</h3>
+        <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+        <h3>默认按钮:</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+        <h3>小按钮:</h3>
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>垂直按钮组</h2>
+        <p>可以使用 .btn-group-vertical 类来创建垂直的按钮组：</p>
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <h2>内嵌按钮组</h2>
+        <p>按钮组设置下拉菜单:</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Tablet</a></li>
+                    <li><a class="dropdown-item" href="#">Smartphone</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-3">
+        <h2>垂直按钮组及下拉菜单</h2>
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Tablet</a></li>
+                    <li><a class="dropdown-item" href="#">Smartphone</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <h2>多个按钮组并排</h2>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">BMW</button>
+            <button type="button" class="btn btn-primary">Mercedes</button>
+            <button type="button" class="btn btn-primary">Volvo</button>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <h2>徽章</h2>
+        <h1>测试标题 <span class="badge bg-secondary">New</span></h1>
+        <h2>测试标题 <span class="badge bg-secondary">New</span></h2>
+        <h3>测试标题 <span class="badge bg-secondary">New</span></h3>
+        <h4>测试标题 <span class="badge bg-secondary">New</span></h4>
+        <h5>测试标题 <span class="badge bg-secondary">New</span></h5>
+        <h6>测试标题 <span class="badge bg-secondary">New</span></h6>
+    </div>
+
+    <div class="container mt-3">
+        <h2>各种颜色类型的徽章</h2>
+        <span class="badge bg-primary">主要</span>
+        <span class="badge bg-secondary">次要</span>
+        <span class="badge bg-success">成功</span>
+        <span class="badge bg-danger">危险</span>
+        <span class="badge bg-warning">警告</span>
+        <span class="badge bg-info">信息</span>
+        <span class="badge bg-light">浅色</span>
+        <span class="badge bg-dark">深色</span>
+    </div>
+
+    <div class="container mt-3">
+        <h2>药丸形状徽章</h2>
+        <span class="badge rounded-pill bg-default">默认</span>
+        <span class="badge rounded-pill bg-primary">主要</span>
+        <span class="badge rounded-pill bg-success">成功</span>
+        <span class="badge rounded-pill bg-info">信息</span>
+        <span class="badge rounded-pill bg-warning">警告</span>
+        <span class="badge rounded-pill bg-danger">危险</span>
+    </div>
+
+    <div class="container mt-3">
+        <h2>徽章嵌入到按钮内</h2>
+        <button type="button" class="btn btn-primary">
+            Messages <span class="badge bg-danger">4</span>
+        </button>
+        <button type="button" class="btn btn-danger">
+            Notifications <span class="badge bg-dark">7</span>
+        </button>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>进度条高度</h2>
+        <p>进度条高度默认为 16px。我们可以使用 CSS 的 height 属性来修改他：</p>
+        <div class="progress" style="height:10px;">
+            <div class="progress-bar" style="width:40%;"></div>
+        </div>
+        <br>
+        <div class="progress" style="height:20px;">
+            <div class="progress-bar" style="width:50%;"></div>
+        </div>
+        <br>
+        <div class="progress" style="height:30px;">
+            <div class="progress-bar" style="width:60%;"></div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-3">
+        <h2>多种颜色的进度条</h2>
+        <p>Bootstrap4 提供了以下几种进度条颜色:</p>
+        <div class="progress">
+            <div class="progress-bar" style="width:30%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-success" style="width:40%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-info" style="width:50%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-warning" style="width:60%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-danger" style="width:70%"></div>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>条纹的进度条</h2>
+        <p>可以使用 .progress-bar-striped 类来设置条纹进度条：</p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" style="width:30%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped" style="width:40%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-info progress-bar-striped" style="width:50%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-warning progress-bar-striped" style="width:60%"></div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-danger progress-bar-striped" style="width:70%"></div>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>混合色彩进度条</h2>
+        <p>进度条可以设置多种颜色:</p>
+        <div class="progress">
+            <div class="progress-bar bg-success" style="width:40%">
+                安全线
+            </div>
+            <div class="progress-bar bg-warning" style="width:10%">
+                警告线
+            </div>
+            <div class="progress-bar bg-danger" style="width:20%">
+                危险线
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <h2>不同颜色加载效果</h2>
+        <p>可以使用文本颜色类设置不同的颜色：</p>
+
+        <div class="spinner-border text-muted"></div>
+        <div class="spinner-border text-primary"></div>
+        <div class="spinner-border text-success"></div>
+        <div class="spinner-border text-info"></div>
+        <div class="spinner-border text-warning"></div>
+        <div class="spinner-border text-danger"></div>
+        <div class="spinner-border text-secondary"></div>
+        <div class="spinner-border text-dark"></div>
+        <div class="spinner-border text-light"></div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>闪烁的加载效果</h2>
+        <p>使用 .spinner-grow 类来设置闪烁的加载效果:</p>
+
+        <div class="spinner-grow text-muted"></div>
+        <div class="spinner-grow text-primary"></div>
+        <div class="spinner-grow text-success"></div>
+        <div class="spinner-grow text-info"></div>
+        <div class="spinner-grow text-warning"></div>
+        <div class="spinner-grow text-danger"></div>
+        <div class="spinner-grow text-secondary"></div>
+        <div class="spinner-grow text-dark"></div>
+        <div class="spinner-grow text-light"></div>
+    </div>
+
+    <div class="container mt-3">
+        <h2>设置加载效果大小</h2>
+        <p>使用.spinner-border-sm 或 .spinner-grow-sm 类来创建加载效果的大小:</p>
+
+        <div class="spinner-border spinner-border-sm"></div>
+        <div class="spinner-grow spinner-grow-sm"></div>
+    </div>
+
+
+    <div class="container mt-3">
+        <h2>加载按钮</h2>
+        <p>按钮添加正在加载按钮:</p>
+
+        <button class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm"></span>
+        </button>
+
+        <button class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading..
+        </button>
+
+        <button class="btn btn-primary" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading..
+        </button>
+
+        <button class="btn btn-primary" disabled>
+            <span class="spinner-grow spinner-grow-sm"></span>
+            Loading..
+        </button>
+    </div>
+
+</body>
+
+</html>

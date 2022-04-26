@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunJs之计算器</title>
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+
+
+    <style>
+        /* Basic Reset */
+        * {
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+        }
+
+        .center {
+            background-color: #ccc;
+            height: 720px;
+            margin: auto;
+            width: 100%;
+
+        }
+
+        h1 {
+            color: #495678;
+            font-size: 30px;
+            margin-top: 20px;
+            padding-top: 10px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a {
+            color: #495678;
+            font-size: 30px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 20px;
+        }
+
+        form {
+            background-color: #495678;
+            box-shadow: 4px 4px #3d4a65;
+            margin: 20px auto;
+            padding: 40px 0 30px 40px;
+            width: 680px;
+        }
+
+        .btn {
+            outline: none;
+            cursor: pointer;
+            font-size: 32px;
+            height: 72px;
+            margin: 16px;
+            width: 118px;
+        }
+
+        .btn:first-child {
+            margin: 5px 0 5px 16px;
+        }
+
+        .btn,
+        #display,
+        form {
+            border-radius: 12px;
+        }
+
+        #display {
+            outline: none;
+            background-color: #98d1dc;
+            box-shadow: inset 6px 6px 0px #3facc0;
+            color: #3d4a65;
+            font-size: 38px;
+            height: 78px;
+            text-align: right;
+            width: 422px;
+            padding-right: 10px;
+            margin-left: 30px;
+        }
+
+        .number {
+            background-color: #72778b;
+            box-shadow: 0 5px #5f6680;
+            color: #dededc;
+        }
+
+        .number:active {
+            box-shadow: 0 2px #5f6680;
+            -webkit-transform: translateY(2px);
+            -ms-transform: translateY(2px);
+            -moz-tranform: translateY(2px);
+            transform: translateY(2px);
+        }
+
+        .operator {
+            background-color: #dededc;
+            box-shadow: 0 5px #bebebe;
+            color: #72778b;
+        }
+
+        .operator:active {
+            box-shadow: 0 2px #bebebe;
+            -webkit-transform: translateY(2px);
+            -ms-transform: translateY(2px);
+            -moz-tranform: translateY(2px);
+            transform: translateY(2px);
+        }
+
+        .other {
+            background-color: #e3844c;
+            box-shadow: 0 5px #e76a3d;
+            color: #dededc;
+        }
+
+        .other:active {
+            box-shadow: 0 2px #e76a3d;
+            -webkit-transform: translateY(2px);
+            -ms-transform: translateY(2px);
+            -moz-tranform: translateY(2px);
+            transform: translateY(2px);
+        }
+    </style>
+    <script>
+        /* limpa o display */
+        document.getElementById("clear").addEventListener("click", function () {
+            document.getElementById("display").value = "";
+        });
+        /* recebe os valores */
+        function get(value) {
+            document.getElementById("display").value += value;
+        }
+
+        /* calcula */
+        function calculates() {
+            var result = 0;
+            result = document.getElementById("display").value;
+            document.getElementById("display").value = "";
+            document.getElementById("display").value = eval(result);
+        };
+    </script>
+</head>
+
+<body>
+    <div class="center">
+        <h1>HTML CSS, JavaScript 计算器</h1>
+        <a href="https://github.com/guuibayer/simple-calculator" target="_blank"><i class="fa fa-github"></i></a>
+        <form name="calculator">
+            <input type="button" id="clear" class="btn other" value="C">
+            <input type="text" id="display">
+            <br>
+            <input type="button" class="btn number" value="7" onclick="get(this.value);">
+            <input type="button" class="btn number" value="8" onclick="get(this.value);">
+            <input type="button" class="btn number" value="9" onclick="get(this.value);">
+            <input type="button" class="btn operator" value="+" onclick="get(this.value);">
+            <br>
+            <input type="button" class="btn number" value="4" onclick="get(this.value);">
+            <input type="button" class="btn number" value="5" onclick="get(this.value);">
+            <input type="button" class="btn number" value="6" onclick="get(this.value);">
+            <input type="button" class="btn operator" value="*" onclick="get(this.value);">
+            <br>
+            <input type="button" class="btn number" value="1" onclick="get(this.value);">
+            <input type="button" class="btn number" value="2" onclick="get(this.value);">
+            <input type="button" class="btn number" value="3" onclick="get(this.value);">
+            <input type="button" class="btn operator" value="-" onclick="get(this.value);">
+            <br>
+            <input type="button" class="btn number" value="0" onclick="get(this.value);">
+            <input type="button" class="btn operator" value="." onclick="get(this.value);">
+            <input type="button" class="btn operator" value="/" onclick="get(this.value);">
+            <input type="button" class="btn other" value="=" onclick="calculates();">
+        </form>
+    </div>
+</body>
+
+</html>

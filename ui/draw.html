@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunJs之动画演示</title>
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <style>
+        #rCanvas {
+            width: 600px;
+            height: 220px;
+            border: 1px solid #d3d3d3;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            console.log("windows load!");
+            drawCicrle();
+            drawImg();
+        };
+
+
+        function drawCicrle() {
+            var c = document.getElementById("rCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(200, 60, 30, 0, 1.5 * Math.PI);
+            ctx.stroke();
+
+            ctx.font = "30px Arial";
+            ctx.fillText("Hello World", 10, 50);
+            ctx.strokeText("Hello World", 10, 100);
+
+            // 创建渐变
+            var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "white");
+
+            // 填充渐变
+            ctx.fillStyle = grd;
+            ctx.fillRect(10, 10, 150, 80);
+        }
+
+
+        function drawImg() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("scream");
+            ctx.drawImage(img, 10, 10);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <canvas id="rCanvas"></canvas>
+
+    <p>Image to use:</p>
+    <img id="scream" src="/image/img_the_scream.jpg" alt="The Scream" width="220" height="277">
+    <p>Canvas:</p>
+    <canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3;">
+        您的浏览器不支持 HTML5 canvas 标签。</canvas>
+
+    <article>
+        菜鸟教程 —— 学的不仅是技术，更是梦想！！！
+    </article>
+
+    <video width="480" height="320" controls>
+        <source src="/video/movie.mp4" type="video/mp4">
+        <source src="/video/movie.ogg" type="video/ogg">
+        你的浏览器不支持 video 标签。
+    </video>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+        <polygon points="100,10 40,180 190,60 10,60 160,180"
+            style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;">
+    </svg>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <msup>
+                <mi>a</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+
+            <msup>
+                <mi>b</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>=</mo>
+
+            <msup>
+                <mi>c</mi>
+                <mn>2</mn>
+            </msup>
+        </mrow>
+
+    </math>
+
+    <br /><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+        <mrow>
+            <mrow>
+                <msup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                </msup>
+
+                <mo>+</mo>
+
+                <mrow>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>x</mi>
+                </mrow>
+
+                <mo>+</mo>
+                <mn>4</mn>
+
+            </mrow>
+            <mo>=</mo>
+            <mn>0</mn>
+        </mrow>
+    </math>
+
+    <br /><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+        <mrow>
+            <mi>A</mi>
+            <mo>=</mo>
+
+            <mfenced open="[" close="]">
+
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mi>x</mi>
+                        </mtd>
+                        <mtd>
+                            <mi>y</mi>
+                        </mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd>
+                            <mi>z</mi>
+                        </mtd>
+                        <mtd>
+                            <mi>w</mi>
+                        </mtd>
+                    </mtr>
+                </mtable>
+
+            </mfenced>
+        </mrow>
+    </math>
+    
+</body>
+
+</html>

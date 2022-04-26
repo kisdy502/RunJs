@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunJs之拖拽元素</title>
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+        #div1 {
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <!--引入百度 API，"ak=" 后面一串码是密钥，最好自己申请-->
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=2.0&ak=7a6QKaIilZftIMmKGAFLG7QT1GLfIncg"></script>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+
+        function getLocation() {
+            var x = document.getElementById("demo");
+            // 创建百度地理位置实例，代替 navigator.geolocation
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function (e) {
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                    // 百度 geolocation 的经纬度属性不同，此处是 point.lat 而不是 coords.latitude
+                    x.innerHTML = '纬度：' + e.point.lat + '<br/>经度：' + e.point.lng;
+                } else {
+                    x.innerHTML = 'failed' + this.getStatus();
+                }
+            });
+        }
+
+        function showPosition(position) {
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+            console.log(latlon);
+            var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+                + latlon + "&zoom=14&size=400x300&sensor=false";
+            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+        }
+
+        function showError(error) {
+            var x = document.getElementById("demo");
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "用户拒绝对获取地理位置的请求。"
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "位置信息是不可用的。"
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "请求用户地理位置超时。"
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "未知错误。"
+                    break;
+            }
+        }
+
+
+
+        function clickCounter() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                }
+                else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = " 你已经点击了按钮 " + localStorage.clickcount + " 次 ";
+            }
+            else {
+                document.getElementById("result").innerHTML = "对不起，您的浏览器不支持 web 存储。";
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <p>拖动 RUNOOB.COM 图片到矩形框中:</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img id="drag1" src="/image/logo.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+    <p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+    <button onclick="getLocation()">点我</button>
+    <div id="mapholder"></div>
+
+
+    E-mail: <input type="email" name="usremail" /><br />
+    生日 (日期和时间): <input type="datetime-local" name="bdaytime" /><br />
+    生日 (日期和时间): <input type="datetime" name="bdaytime" /><br />
+    生日 (日期和时间): <input type="date" name="bday" /><br />
+    选择你喜欢的颜色: <input type="color" name="favcolor"><br />
+    生日 ( 月和年 ): <input type="month" name="bdaymonth" /><br />
+    数量 ( 1 到 5 之间): <input type="number" name="quantity" min="1" max="5" /><br />
+    Points: <input type="range" name="points" min="1" max="10" /><br />
+    Search Google: <input type="search" name="googlesearch" /><br />
+    电话号码: <input type="tel" name="usrtel" /><br />
+    选择周: <input type="week" name="year_week" /><br />
+
+
+    <form action="demo-form.php" method="get">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
+
+    <form action="demo-form.php">
+        First name: <input type="text" name="fname" autofocus><br>
+        Last name: <input type="text" name="lname"><br>
+        E-mail: <input type="email" name="email" autocomplete="off"><br>
+        <input type="submit">
+    </form>
+
+
+    <p><button onclick="clickCounter()" type="button">点我！</button></p>
+    <div id="result"></div>
+    <p>点击该按钮查看计数器的增加。</p>
+    <p>关闭浏览器选项卡(或窗口),重新打开此页面,计数器将继续计数(不是重置)。</p>
+</body>
+
+</html>
